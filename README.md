@@ -10,3 +10,22 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+Development:
+
+Define API endpoints in the back-end server. 
+Run back-end on port 8080 using 
+    npm run start
+
+Test API calls using Postman or http://localhost:8080/api/...
+
+Define API calls in the front-end client using axios. 
+Run the front-end using 
+    npm run dev
+
+Runs on http://localhost:5173/
+
+Make sure the PostgreSQL is running, too
+    brew services start postgresql
+    brew services list
+    brew services stop postgresql
