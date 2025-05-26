@@ -36,12 +36,22 @@ app.get("/api/projects", async (req, res) => {
         else {
             result = await pool.query('SELECT * FROM projects WHERE category = $1', [category]);
         }
-        res.json(result.rows);
+        res.json({"projects": result.rows});
     }
     catch(err){
         console.log(err);
         res.status(500).send('Server error!');
     };
+});
+
+app.get("/api/work", async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM jobs');
+        res.json({"work": result.rows});
+    } catch (err) {
+        console.log(err);
+        res.status(500).send('Server error!');
+    }
 });
 
 // defining POST endpoints
